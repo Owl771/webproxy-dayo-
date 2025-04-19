@@ -27,6 +27,20 @@ app.get("/", (req, res) => {
   `);
 });
 
+const unblocker = require("unblocker");
+
+app.use(
+  unblocker({
+    prefix: "/proxy/",
+    responseMiddleware: [
+      function (data, req, res, next) {
+        res.setHeader("Content-Type", "text/html; charset=utf-8");
+        next();
+      },
+    ],
+  })
+);
+
 
 app.listen(port, () =>
   console.log(`HTTP Server Running on Port: ${port}`)
