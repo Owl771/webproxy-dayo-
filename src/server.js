@@ -9,7 +9,6 @@ app.use(express.json());
 app.use(cors());
 app.use(userRoutes);
 
-// 👇 これを追加
 app.get("/", (req, res) => {
   res.send(`
     <html lang="ja">
@@ -27,6 +26,7 @@ app.get("/", (req, res) => {
     </html>
   `);
 });
+
 
 app.listen(port, () =>
   console.log(`HTTP Server Running on Port: ${port}`)
