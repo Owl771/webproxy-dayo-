@@ -13,6 +13,6 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "uuid": "^9.0.0",
-    "unblocker": "^2.6.1" 
+    "unblocker": "＊" 
   }
 }
